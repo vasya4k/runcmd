@@ -1,0 +1,18 @@
+# Ignore all
+*
+
+# Unignore all with extensions
+!*.*
+
+# Unignore all dirs
+!*/
+
+ui/master/bower_components
+ui/master/node_modules
+
+.idea
+
+*.tar
+*.zip
+*.rar
+*.exe
