@@ -95,7 +95,7 @@ func readHosts(hostFile string) []string {
 
 func passwordEntery() string {
 	fmt.Printf("Password: ")
-	getPasss := gopass.GetPasswdMasked()
+	getPasss, _ := gopass.GetPasswdMasked()
 	passwd := string(getPasss[:])
 
 	if len(passwd) == 0 {
@@ -107,6 +107,9 @@ func passwordEntery() string {
 
 func main() {
 	fmt.Println("Usage: command hosts file username")
+	if len(os.Args) <= 1 {
+		os.Exit(1)
+	}
 	hosts := readHosts(os.Args[1])
 	var (
 		User string
